@@ -3,7 +3,7 @@ import styled from "styled-components";
 import personIcon from "../images/icon-person.svg"
 
 
-const NumberOfPeople = ({setNumPeople}) => {
+const NumberOfPeople = ({numPeople,setNumPeople}) => {
     const setValue =() =>{
         let value = document.getElementById("peopleAmount").value
         setNumPeople(value);
@@ -11,7 +11,11 @@ const NumberOfPeople = ({setNumPeople}) => {
 
     return(
         <div>
-        <p>Number of People</p>
+            <div style={{boxSizing:"border-box",display:"flex", alignItems: "center", justifyContent:"space-between"}}>
+                <p>Number of People </p>
+                <EroorMessage style={numPeople === 0? {display:"inline"}:{display:"none"}}>Can't be zero</EroorMessage>
+            </div>
+            
         <div style={{position:"relative", marginTop:"6px"}}>
             <PersonIcon src={personIcon}></PersonIcon>
             <InputNumberOfPeple type="Number" id="peopleAmount" min={1} onChange={setValue} placeholder={0}/>
@@ -49,4 +53,15 @@ const PersonIcon = styled.img`
     height: 15px;
     left: 17px;
     top:17px;
+`
+
+const EroorMessage = styled.p`
+    font-family: Space Mono;
+font-size: 16px;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: right;
+color:rgba(225, 116, 87, 1);
+
 `

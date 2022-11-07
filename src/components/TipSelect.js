@@ -65,6 +65,11 @@ const TipInput = styled.input`
         border: 2px solid #26C2AE;
         cursor: pointer;
     }
+
+    @media (min-width: 1440px){
+        width: 117px;
+        padding: 0;
+    }
     
 
 `
@@ -86,6 +91,9 @@ const Tip = styled.button`
     &:hover{
         background-color: #9FE8DF;
         cursor: pointer;
+    }
+    @media (min-width: 1440px){
+        width: 117px;
     }
 
 `

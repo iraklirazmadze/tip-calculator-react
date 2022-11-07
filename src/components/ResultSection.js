@@ -22,7 +22,7 @@ const ResultSection = ({tipResult,totalResult}) => {
                 </ByPerson>
                 <TotalAmount>${totalResult}</TotalAmount>
             </TotalDiv>
-            <ResetButton style={totalResult ==0 ? {backgroundColor: "#0D686D"}:null} onClick={() => window.location.reload()}>RESET</ResetButton>
+            <ResetButton style={totalResult ===0 ? {backgroundColor: "#0D686D"}:null} onClick={() => window.location.reload()}>RESET</ResetButton>
         </ResultBox>
     )
 }
@@ -30,18 +30,28 @@ const ResultSection = ({tipResult,totalResult}) => {
 export default ResultSection
 
 const ResultBox =styled.div`
+    display:flex;
+    flex-direction: column;
+    row-gap: 25px;
     width: 100%;
     background-color: #00474B;
     padding: 40px 24px 24px 24px;
     box-sizing: border-box;
     border-radius: 15px;
+    @media (min-width: 1440px){
+        width: 700px;
+        padding: 56px 40px 40px 40px;
+    }
 `
 
 const TipAmountDiv = styled.div`
     display: flex;
     justify-content: space-between;
-    margin-bottom: 24px;
+    
     align-items: center;
+    @media (min-width: 1440px){
+        margin-bottom: 24px;
+    }
 
 `
 
@@ -61,6 +71,11 @@ const TipAmount =styled.p`
     line-height: 47px;
     letter-spacing: -0.6666666865348816px;
     text-align: right;
+    margin:0;
+    @media (min-width : 1440px){
+        font-size: 48px;
+
+    }
 
 `
 
@@ -83,6 +98,9 @@ const ResetButton = styled.button`
     &:hover{
         cursor: pointer;
         background-color: #9FE8DF;
+    }
+    @media (min-width:1440px){
+        margin-top: 70px;
     }
 
 `

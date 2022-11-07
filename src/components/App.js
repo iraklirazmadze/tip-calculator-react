@@ -22,7 +22,7 @@ function App() {
         <Inputs>
           <BillInput setBillAmount={setBillAmount} />
           <TipSelect setTipAmount={setTipAmount} />
-          <NumberOfPeople setNumPeople={setNumPeople} />
+          <NumberOfPeople numPeople={numPeople} setNumPeople={setNumPeople} />
         </Inputs>
         <ResultSection tipResult={tipResult} totalResult={totalResult} />
       </Calculator>
@@ -40,6 +40,7 @@ const MainPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `
 
 const Logo = styled.img`
@@ -56,6 +57,13 @@ const Calculator = styled.div`
   border-radius: 25px 25px 0 0;
   margin-top:40px;
   row-gap: 32px;
+  @media (min-width:1440px){
+    flex-direction: row;
+    width: 920px;
+    column-gap: 48px;
+    margin-top: 87px;
+    border-radius: 25px;
+  }
 `
 
 const Inputs = styled.div`
