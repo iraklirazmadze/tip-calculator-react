@@ -9,11 +9,15 @@ function App() {
   const [billAmount,setBillAmount] = useState(0)
   const [TipAmount,setTipAmount] = useState(0)
   const [numPeople,setNumPeople] = useState(1)
-  let tipResult = billAmount*TipAmount/numPeople;
-  let totalResult = billAmount/numPeople +tipResult;
+  let tipResult = 0;
+  let totalResult=0;
+  if(numPeople > 0){
+    tipResult = billAmount*TipAmount/numPeople;
+    totalResult = billAmount/numPeople +tipResult;
+  }
   tipResult = tipResult.toFixed(2);
-  
   totalResult = totalResult.toFixed(2)
+  
 
   return (
     <MainPage>
@@ -46,7 +50,7 @@ const MainPage = styled.div`
 const Logo = styled.img`
   margin-top: 50px;
   @media (min-width: 1440px){
-    margin-top: 0;
+    margin-top: -100px;
   }
 `
 

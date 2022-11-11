@@ -8,17 +8,24 @@ const NumberOfPeople = ({numPeople,setNumPeople}) => {
         let value = document.getElementById("peopleAmount").value
         setNumPeople(value);
     }
+    function checkNumPeople(){
+        if(numPeople == 0){
+            return "can`t be zero"
+        }else if(numPeople < 0){
+            return "can`t be negative"
+        }
+    }
 
     return(
         <div>
             <div style={{boxSizing:"border-box",display:"flex", alignItems: "center", justifyContent:"space-between"}}>
                 <p>Number of People </p>
-                <EroorMessage style={numPeople === 0? {display:"inline"}:{display:"none"}}>Can't be zero</EroorMessage>
+                <EroorMessage style={numPeople <= 0 ? {display:"inline"}:{display:"none"}}>{checkNumPeople()}</EroorMessage>
             </div>
             
         <div style={{position:"relative", marginTop:"6px"}}>
             <PersonIcon src={personIcon}></PersonIcon>
-            <InputNumberOfPeple type="Number" id="peopleAmount" min={1} onChange={setValue} placeholder={0}/>
+            <InputNumberOfPeple style={numPeople <= 0 ? {border:"2px solid red"}:{border:"2px solid white"}} type="Number" id="peopleAmount" min={1} onChange={setValue} placeholder={0}/>
             </div>
         </div>
     )
