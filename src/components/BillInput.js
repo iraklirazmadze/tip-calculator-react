@@ -41,6 +41,9 @@ const Input = styled.input`
     padding: 6px 17px;
     box-sizing: border-box;
     color:#00474B;
+    border: 2px;
+    outline: none;
+    border:2px solid white;
     &:hover{
         border: 2px solid #26C2AE;
         cursor: pointer;

@@ -45,6 +45,9 @@ const MainPage = styled.div`
 
 const Logo = styled.img`
   margin-top: 50px;
+  @media (min-width: 1440px){
+    margin-top: 0;
+  }
 `
 
 const Calculator = styled.div`

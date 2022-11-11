@@ -61,6 +61,8 @@ const TipInput = styled.input`
     background-color: #F3F9FA;
     padding: 0 15px;
     color: #547878;
+    outline: none;
+    border:2px solid white;
     &:hover{
         border: 2px solid #26C2AE;
         cursor: pointer;
